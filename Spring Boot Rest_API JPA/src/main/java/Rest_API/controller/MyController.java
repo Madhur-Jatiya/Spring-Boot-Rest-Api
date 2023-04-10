@@ -30,13 +30,10 @@ public class MyController {
 	// get the course by id
 
 	@GetMapping("/courses/{courseId}")
-	public Object getCourse(@PathVariable int courseId) {
-		Course existingCourse = courseServices.getCourse(courseId);
-		if (existingCourse != null) {
-			return courseServices.getCourse(courseId);
-		} else {
-			return "Course id not found";
-		}
+	public Course getCourse(@PathVariable int courseId) {
+		System.out.println("hyy1");
+		return courseServices.getCourse(courseId);
+
 	}
 
 	// add courses
@@ -52,7 +49,7 @@ public class MyController {
 	public Object updateCourse(@PathVariable int courseId, @RequestBody Course course) {
 		Course existingCourse = courseServices.getCourse(courseId);
 		if (existingCourse != null) {
-			return courseServices.updateCourse(existingCourse, course);
+			return courseServices.updateCourse(course);
 		} else {
 			return "Course id not found";
 		}

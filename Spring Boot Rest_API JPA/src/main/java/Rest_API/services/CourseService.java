@@ -13,7 +13,7 @@ public interface CourseService {
 
 	public Course addCourse(Course course);
 
-	public Course updateCourse(Course existingCourse, Course course);
+	public Course updateCourse(Course course);
 
 	public String deleteCourse(Course course);
 }
