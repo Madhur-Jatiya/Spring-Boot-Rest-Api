@@ -27,6 +27,8 @@ public class MyController {
 		return courseServices.getCourses();
 	}
 
+	// get the course by id
+
 	@GetMapping("/courses/{courseId}")
 	public Object getCourse(@PathVariable int courseId) {
 		Course existingCourse = courseServices.getCourse(courseId);
@@ -37,10 +39,14 @@ public class MyController {
 		}
 	}
 
+	// add courses
+
 	@PostMapping("/courses")
 	public Course addCourse(@RequestBody Course course) {
 		return courseServices.addCourse(course);
 	}
+
+	// update course by id
 
 	@PutMapping("/courses/{courseId}")
 	public Object updateCourse(@PathVariable int courseId, @RequestBody Course course) {
@@ -51,6 +57,8 @@ public class MyController {
 			return "Course id not found";
 		}
 	}
+
+	// delete course by id
 
 	@DeleteMapping("/courses/{courseId}")
 	public String deleteCourse(@PathVariable int courseId) {
